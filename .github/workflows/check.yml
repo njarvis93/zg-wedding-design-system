@@ -23,3 +23,6 @@ jobs:
           if [ "v$version" != "${GITHUB_REF_NAME}" ]; then
             echo "Tag ${GITHUB_REF_NAME} does not match package.json version $version"; exit 1
           fi
+      - name: Consumer test (React 19 + React Hook Form, tsc --strict, server render)
+        working-directory: test/consumer
+        run: npm install --no-audit --no-fund && npm test

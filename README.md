@@ -9,10 +9,10 @@ Visual system for the ZG Wedding app: a public cover, a mobile-first guest site 
 Install a tagged version straight from GitHub (the repo is public, so no token is needed):
 
 ```bash
-npm install github:njarvis93/zg-wedding-design-system#v1.0.0
+npm install git+https://github.com/njarvis93/zg-wedding-design-system.git#v1.1.0
 ```
 
-or pin a range in `package.json`: `"zg-wedding-design-system": "github:njarvis93/zg-wedding-design-system#semver:^1.0.0"`. To upgrade, change the tag.
+or pin a range in `package.json`: `"zg-wedding-design-system": "git+https://github.com/njarvis93/zg-wedding-design-system.git#semver:^1.1.0"`. To upgrade, change the tag.
 
 ```js
 // once, at the app entry
@@ -37,7 +37,7 @@ import tokens from 'zg-wedding-design-system/tokens.json';
 2. Run `npm run build` (plain Node, nothing to install). It regenerates `dist/` and the artifact bundle in `project/components/`.
 3. Bump `version` in `package.json`, add a `CHANGELOG.md` entry, rebuild, commit, then tag and push:
    ```bash
-   git tag v1.1.0 && git push origin main v1.1.0
+   git tag v1.2.0 && git push origin main v1.2.0
    ```
 
 GitHub checks on every push that the generated files match their sources (`npm run check`).
@@ -56,4 +56,4 @@ GitHub checks on every push that the generated files match their sources (`npm r
 
 ## Licenses
 
-The fonts in `project/fonts/` are distributed under the SIL Open Font License 1.1 — see [`project/fonts/OFL.txt`](project/fonts/OFL.txt). Everything else is under the repository [LICENSE](LICENSE).
+The fonts in `project/fonts/` are distributed under the SIL Open Font License 1.1 — see [`project/fonts/OFL.txt`](project/fonts/OFL.txt). Everything else is under the MIT license in [LICENSE](LICENSE).

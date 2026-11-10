@@ -1,4 +1,4 @@
-<!-- @dsCard group="Forms" height=260 -->
+<!-- @dsCard group="Forms" height=480 -->
 <!doctype html>
 <html lang="es">
 <head><meta charset="utf-8"><title>CheckboxRow — preview</title></head>
@@ -8,6 +8,8 @@
   var M = window.Matrimonio, h = React.createElement;
   ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',flexDirection:'column',gap:14,maxWidth:440}},
   h(M.CheckboxRow,{boxed:true,label:'Nos interesa compartir auto'}),
+  h(M.CheckboxRow,{boxed:true,required:true,label:'Confirmo mi asistencia',error:'Confirma tu asistencia.'}),
+  h(M.CheckboxRow,{boxed:true,disabled:true,label:'Necesito transporte desde el hotel'}),
   h('div',null,
     h(M.CheckboxRow,{divider:true,label:'Visitar las 2 casas preseleccionadas',tag:'Ambos',due:'sáb 14',urgent:true}),
     h(M.CheckboxRow,{divider:true,label:'Pedir 3 cotizaciones de banquetería',tag:'Juan',tagTone:'pendiente',due:'20 nov'}),

@@ -79,6 +79,11 @@ textarea.mx-input { height: auto; padding: var(--space-12) var(--space-14); font
 .mx-field--code .mx-field__label { color: var(--texto-suave); }
 .mx-input--code { height: var(--size-control-xl); padding: 0 var(--space-16); background: var(--fondo); font: 600 20px var(--font-sans);
   letter-spacing: var(--tracking-code); text-align: center; }
+.mx-field__req { font-weight: 500; color: var(--texto-tenue); }
+.mx-field__error { font: 600 12px/1.5 var(--font-sans); color: var(--rojo-texto); }
+/* Error: the outline turns rojo-texto; the 2px marino focus ring above is untouched, so focus stays visible. */
+.mx-input[aria-invalid="true"] { border-color: var(--rojo-texto); }
+.mx-input:disabled { opacity: .5; cursor: not-allowed; }
 .mx-search { position: relative; display: block; }
 .mx-input--search { height: 46px; padding: 0 var(--space-16) 0 42px; }
 .mx-search__icon { position: absolute; left: 16px; top: 14px; color: var(--texto-tenue); }
@@ -95,6 +100,12 @@ textarea.mx-input { height: auto; padding: var(--space-12) var(--space-14); font
 .mx-check--done .mx-check__text > span:first-child { color: var(--texto-tenue); text-decoration: line-through; }
 .mx-check--boxed { min-height: var(--size-control-lg); padding: 0 var(--space-14); background: var(--blanco);
   border: var(--border-card) solid var(--trazo); font-weight: 500; }
+
+.mx-check input[aria-invalid="true"] { outline: var(--border-card) solid var(--rojo-texto); outline-offset: 1px; }
+.mx-check input[aria-invalid="true"]:focus-visible { outline: 2px solid var(--marino); outline-offset: 2px; }
+.mx-check--boxed.mx-check--error { border-color: var(--rojo-texto); }
+.mx-check--disabled { opacity: .5; cursor: not-allowed; }
+.mx-check__error { display: block; margin-top: var(--space-6); }
 
 /* ---------- SegmentedControl ---------- */
 .mx-seg { display: inline-flex; padding: var(--space-4); border-radius: var(--radius-0); background: var(--lavanda); }
