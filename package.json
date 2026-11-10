@@ -1,0 +1,43 @@
+{
+  "name": "zg-wedding-design-system",
+  "version": "1.0.0",
+  "description": "Matrimonio — design system for the ZG Wedding app: tokens (Costa and Noche themes), React components, fonts and SVG assets.",
+  "private": true,
+  "license": "GPL-3.0-only",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njarvis93/zg-wedding-design-system.git"
+  },
+  "homepage": "https://njarvis93.github.io/zg-wedding-design-system/",
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "default": "./dist/index.js"
+    },
+    "./tokens.css": "./dist/tokens.css",
+    "./styles.css": "./dist/styles.css",
+    "./base.css": "./dist/base.css",
+    "./tokens.json": "./dist/tokens.json",
+    "./fonts/*": "./dist/fonts/*",
+    "./assets/*": "./dist/assets/*",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "*.css"
+  ],
+  "peerDependencies": {
+    "react": ">=18"
+  },
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "check": "node scripts/build.mjs --check"
+  }
+}

@@ -1,5 +1,5 @@
-// Matrimonio — window.Matrimonio. Types as documentation (not type-checked).
-import type { ReactNode } from 'react';
+// Matrimonio — types for `import { … } from 'zg-wedding-design-system'` (and window.Matrimonio in the artifact).
+import type { ReactNode, ReactElement } from 'react';
 
 export type IconName = 'home' | 'info' | 'check-circle' | 'gift' | 'grid' | 'checklist' | 'users' | 'more' | 'star' | 'bell' | 'search' | 'camera' | 'help-circle' | 'map-pin' | 'clock' | 'plane' | 'chevron-left' | 'check' | 'plus' | 'instagram';
 export type StatusTone = 'confirmado' | 'pendiente' | 'elegida' | 'descartada';
@@ -39,3 +39,40 @@ export interface MajolicaStripProps { size?: 'mobile' | 'desktop'; position?: 't
 export interface MajolicaPatternProps { tone?: 'color' | 'ghost'; scale?: number; }
 export interface WordmarkProps { size?: 'md' | 'lg'; onDark?: boolean; }
 export interface PlateProps { size?: number; monogram?: boolean; label?: string; }
+
+export declare function Button(props: ButtonProps): ReactElement;
+export declare function IconButton(props: IconButtonProps): ReactElement;
+export declare function Icon(props: IconProps): ReactElement;
+export declare function Badge(props: BadgeProps): ReactElement;
+export declare function Avatar(props: AvatarProps): ReactElement;
+export declare function AvatarStack(props: AvatarStackProps): ReactElement;
+export declare function ProgressBar(props: ProgressBarProps): ReactElement;
+export declare function StarRating(props: StarRatingProps): ReactElement;
+export declare function TextField(props: TextFieldProps): ReactElement;
+export declare function Select(props: SelectProps): ReactElement;
+export declare function CheckboxRow(props: CheckboxRowProps): ReactElement;
+export declare function SegmentedControl(props: SegmentedControlProps): ReactElement;
+export declare function ChoiceToggle(props: ChoiceToggleProps): ReactElement;
+export declare function FilterChips(props: FilterChipsProps): ReactElement;
+export declare function Card(props: CardProps): ReactElement;
+export declare function StatCard(props: StatCardProps): ReactElement;
+export declare function Countdown(props: CountdownProps): ReactElement;
+export declare function Timeline(props: TimelineProps): ReactElement;
+export declare function ListRow(props: ListRowProps): ReactElement;
+export declare function Accordion(props: AccordionProps): ReactElement;
+export declare function StatusMessage(props: StatusMessageProps): ReactElement;
+export declare function ActivityItem(props: ActivityItemProps): ReactElement;
+export declare function GiftItem(props: GiftItemProps): ReactElement;
+export declare function FundCard(props: FundCardProps): ReactElement;
+export declare function ComparisonTable(props: ComparisonTableProps): ReactElement;
+export declare function TabBar(props: TabBarProps): ReactElement;
+export declare function TopNav(props: TopNavProps): ReactElement;
+export declare function Sidebar(props: SidebarProps): ReactElement;
+export declare function BackLink(props: BackLinkProps): ReactElement;
+export declare function MajolicaStrip(props: MajolicaStripProps): ReactElement;
+export declare function MajolicaPattern(props: MajolicaPatternProps): ReactElement;
+export declare function Wordmark(props: WordmarkProps): ReactElement;
+export declare function Plate(props: PlateProps): ReactElement;
+
+/** Path data of every icon, keyed by name: [tag, attributes][] in a 24×24 viewBox. */
+export declare const ICONS: Record<IconName, [string, Record<string, string | number>][]>;

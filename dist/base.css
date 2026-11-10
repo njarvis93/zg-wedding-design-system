@@ -1,0 +1,2 @@
+/* Matrimonio — optional page base: page ground, ink and body font from the tokens. */
+body { margin: 0; background: var(--fondo); color: var(--marino); font-family: var(--font-sans); }
