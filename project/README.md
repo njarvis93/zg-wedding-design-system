@@ -22,7 +22,7 @@ Matrimonio is the visual system of Narvis & Juan's wedding app: one React app fo
 ## Color
 
 - Page ground is always `fondo`; cards and controls are `blanco` with a `mayolica` outline. `crema` is the ceramic, not a surface.
-- Text is `marino` (ink). Secondary paragraphs and labels use `texto-suave`; captions, meta and eyebrows use `texto-tenue`. On `lavanda` use `marino` or `texto-lavanda`; on `mayolica`/`marino` use `blanco` and `texto-claro` (sidebar: `texto-claro-tenue`); on `pendiente` stat cards use `pendiente-texto`.
+- Text is `marino` (ink). Secondary paragraphs and labels use `texto-suave`; captions, meta and eyebrows use `texto-tenue`. On `lavanda` use `marino` or `texto-suave`; on `mayolica`/`profundo` use `texto-invertido` and `texto-claro`; on `pendiente` use `marino`.
 - Action is `mayolica`. Accent on light grounds is `rojo` (the ampersand, the offset shadow, display words like "al atardecer" on `fondo` or `blanco`); accent on dark grounds is `naranja` (active sidebar item, counts, progress on navy). On `arena` (the sand banner) a red display word is set in `rojo-texto`, never `rojo`.
 - Red as small text is `rojo-texto` — deadlines, kickers, cons, "✗ No". Never set body text in `rojo`.
 - Status pairs: confirmado → `lavanda`; pendiente / por decidir → `pendiente`; elegida → `marino` with `blanco`; descartada / no asiste → `descartada` with `descartada-texto`. Each status always carries its word, never color alone.
@@ -32,7 +32,7 @@ Matrimonio is the visual system of Narvis & Juan's wedding app: one React app fo
 
 - Light is the source, unchanged. Noche is an added theme built from it: a night-navy `fondo` (#0d1830), raised `blanco` surfaces (#15233f), light `marino` ink, and dark tints for `lavanda`, `pendiente` and `descartada` with light text. Every text pair holds 4.5:1 or better in both themes.
 - `mayolica`, `naranja`, `rojo`, the ceramic colors and the ornaments do not change: the tile, plate and lemons look the same at night.
-- Paint by ROLE, not by hue, so both themes work: outlines → `trazo`; links, active tabs, progress fills → `accion-texto`; text on `mayolica`/`profundo` → `texto-invertido`; deep panels (sidebar, success banner, navy cards) → `profundo`; selected segment, active chip, current link, "Elegida", dark button → `seleccion` + `sobre-seleccion`; text on `naranja` or `crema` → `tinta-fija`. Use `blanco` only as a surface and `marino` only as ink.
+- Paint by ROLE, not by hue, so both themes work: outlines → `trazo`; links, active tabs, progress fills → `accion-texto`; text on `mayolica`/`profundo` → `texto-invertido`; deep panels (sidebar, success banner, navy cards) → `profundo`; selected segment, active chip, current link, "Elegida", dark button → `seleccion` + `sobre-seleccion`; text on `naranja` or `crema` → `profundo` (it stays navy in both themes). Use `blanco` only as a surface and `marino` only as ink.
 - In Noche, `blanco` is a navy surface: never use it as a text color.
 
 ## Type
@@ -65,14 +65,14 @@ Matrimonio is the visual system of Narvis & Juan's wedding app: one React app fo
 - **Ghost majolica** (`MajolicaPattern tone="ghost"`): the same tile in cream at 3–9% alpha behind `mayolica` and `marino` cards and the sidebar. Never on light grounds.
 - **Photo placeholders**: until a real photo exists, an image area is the full-colour tile (scale .8) with a small "foto" label on `crema`. Real photos fill the same box, square-cornered.
 - **Ceramic plate** (`Plate`, `assets/Logos/plate-lemons.svg`): one per hero — top-right of the save-the-date card (150px, bleeding off the corner), beside the names on the system board. With the "N&J" monogram (`assets/Logos/monogram-plate.svg`) it is the desktop hero mark.
-- **Sand** (`arena` + `arena-trazo` speckle, `assets/Illustrations/sand-banner.svg`) is the ground of the desktop guest hero and the public cover.
-- **Lemons** (`limon`, `limon-brillo`, `oliva`, `oliva-claro`) appear only as sprigs around the plate or on the lemon tree in the couple app's countdown.
+- **Sand** (`arena` with a speckle of brand colors, `assets/Illustrations/sand-banner.svg`) is the ground of the desktop guest hero and the public cover.
+- **Lemons** (`limon` with a `crema` highlight, `oliva` leaves) appear only as sprigs around the plate or on the lemon tree in the couple app's countdown.
 
 ## Iconography
 
 - One line-icon family, drawn inline: 24×24 viewBox, round caps and joins, `stroke="currentColor"`, no fill. Stroke 1.9 in tab bars, 1.8 in feature tiles and buttons, 2 for back/search, 2.2 for the plus, 2.4 for the success check. Use `Icon` with a name from `assets/Icons/`.
 - Icons take the color of their label: `texto-tenue` inactive and `mayolica` active in the tab bar, `mayolica` on feature tiles and fund tiles, `marino` in the bell.
-- Ratings use `star-filled` (`naranja` fill, `estrella-borde` stroke) and `star-empty` (`estrella-vacia`).
+- Ratings use `star-filled` (`naranja` fill, `estrella-borde` stroke) and `star-empty` (`texto-tenue`).
 - No emoji, no icon fonts. Instagram is the only brand glyph (footer "Compartan sus fotos").
 
 ## Components

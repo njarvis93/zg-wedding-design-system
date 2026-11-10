@@ -275,8 +275,8 @@
   },
   "lastChange": {
     "by": "Claude",
-    "at": "2026-11-10T00:50:00Z",
+    "at": "2026-11-10T01:30:00Z",
     "via": "Claude Code",
-    "note": "rojo-texto light nudged #c73232 → #c22e2e: all red text now passes 4.5:1, including on arena (4.72:1)."
+    "note": "Unified similar colors: 44 → 31 tokens (10 merged into their nearest role, 3 illustration-only removed)."
   }
 }

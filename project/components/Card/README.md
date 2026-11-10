@@ -9,4 +9,4 @@ The square container: white with a 2px `mayolica` outline by default, or a flat 
 ## Usage
 - Feature tiles on the guest home ("Programa", "Cómo llegar"…) are `outline` links with a `mayolica` icon, a 15px bold title and a 13px caption.
 - A dark card (`marino`, `pattern`) stands out once per screen (Regalos on desktop, the countdown in the app).
-- `lavanda` is for a soft aside (brunch, news band); text inside it uses `texto-lavanda`.
+- `lavanda` is for a soft aside (brunch, news band); text inside it uses `marino` or `texto-suave`.

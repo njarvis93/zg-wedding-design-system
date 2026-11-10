@@ -105,17 +105,17 @@
       h('ellipse', { cx: props.cx, cy: props.cy, rx: props.rx, ry: props.ry, style: { fill: v('limon') } }),
       h('circle', { cx: props.cx - props.rx - 1, cy: props.cy, r: 2.6, style: { fill: v('limon') } }),
       h('circle', { cx: props.cx + props.rx + 1, cy: props.cy, r: 2.2, style: { fill: v('limon') } }),
-      h('ellipse', { cx: props.hx, cy: props.hy, rx: props.hrx, ry: props.hry, style: { fill: v('limon-brillo') } }));
+      h('ellipse', { cx: props.hx, cy: props.hy, rx: props.hrx, ry: props.hry, style: { fill: v('crema') } }));
   }
   function Plate(props) {
     var size = props.size || 160;
     var petals = [];
     for (var a = 0; a < 360; a += 30) petals.push(h('path', { key: a, d: 'M80 18c7 6 7 13 0 19c-7-6-7-13 0-19z', style: { fill: v('mayolica') }, transform: 'rotate(' + a + ' 80 80)' }));
     var center = props.monogram
-      ? h('text', { x: 80, y: 90, textAnchor: 'middle', style: { fontFamily: v('font-display'), fontWeight: 500, fontSize: 28, letterSpacing: -1.2, fill: v('azul-profundo') } }, 'N', h('tspan', { style: { fill: v('rojo') } }, '&'), 'J')
+      ? h('text', { x: 80, y: 90, textAnchor: 'middle', style: { fontFamily: v('font-display'), fontWeight: 500, fontSize: 28, letterSpacing: -1.2, fill: v('profundo') } }, 'N', h('tspan', { style: { fill: v('rojo') } }, '&'), 'J')
       : h(Fragment, null,
           h('path', { d: 'M58 70c6-10 20-12 28-6c-8 9-20 11-28 6z', style: { fill: v('oliva') } }),
-          h('path', { d: 'M86 62c8-6 20-3 23 5c-9 5-18 3-23-5z', style: { fill: v('oliva-claro') } }),
+          h('path', { d: 'M86 62c8-6 20-3 23 5c-9 5-18 3-23-5z', style: { fill: v('oliva') } }),
           h(Lemon, { transform: 'rotate(-16 70 88)', cx: 70, cy: 88, rx: 16, ry: 12, hx: 65.2, hy: 83.2, hrx: 5.6, hry: 2.64 }),
           h(Lemon, { transform: 'rotate(18 98 84)', cx: 98, cy: 84, rx: 15, ry: 11, hx: 93.5, hy: 79.6, hrx: 5.25, hry: 2.42 }));
     return h('svg', { className: cx('mx-plate', props.className), width: size, height: size, viewBox: '0 0 160 160', role: props.label ? 'img' : undefined, 'aria-label': props.label, 'aria-hidden': props.label ? undefined : 'true' },
@@ -123,7 +123,7 @@
       h('circle', { cx: 80, cy: 80, r: 70, fill: 'none', strokeWidth: 2, style: { stroke: v('mayolica') } }),
       petals,
       OLIVE_DOTS.map(function (d, i) { return h('circle', { key: 'o' + i, cx: d[0], cy: d[1], r: 2.4, style: { fill: v('oliva') } }); }),
-      h('circle', { cx: 80, cy: 80, r: 44, fill: 'none', strokeWidth: 2, strokeDasharray: '3 5', style: { stroke: v('azul-plato') } }),
+      h('circle', { cx: 80, cy: 80, r: 44, fill: 'none', strokeWidth: 2, strokeDasharray: '3 5', style: { stroke: v('lavanda-fija') } }),
       h('circle', { cx: 80, cy: 80, r: 38, strokeWidth: 2.5, style: { fill: v('crema'), stroke: v('mayolica') } }),
       center);
   }
@@ -177,7 +177,7 @@
       (function (n) {
         var on = n <= value;
         stars.push(h('button', { key: n, type: 'button', className: 'mx-star', 'aria-label': n + (n === 1 ? ' estrella' : ' estrellas'), 'aria-pressed': n === value, onClick: props.onChange ? function () { props.onChange(n); } : undefined },
-          h('svg', { width: 24, height: 24, viewBox: '0 0 24 24', 'aria-hidden': 'true', strokeLinejoin: 'round', strokeWidth: on ? 1.4 : 1.6, style: on ? { fill: v('naranja'), stroke: v('estrella-borde') } : { fill: 'none', stroke: v('estrella-vacia') } },
+          h('svg', { width: 24, height: 24, viewBox: '0 0 24 24', 'aria-hidden': 'true', strokeLinejoin: 'round', strokeWidth: on ? 1.4 : 1.6, style: on ? { fill: v('naranja'), stroke: v('estrella-borde') } : { fill: 'none', stroke: v('texto-tenue') } },
             h('path', { d: ICONS.star[0][1].d }))));
       })(i);
     }
