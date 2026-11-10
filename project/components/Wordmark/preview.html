@@ -1,0 +1,12 @@
+<!-- @dsCard group="Ornament" height=80 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Wordmark — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',gap:24,alignItems:'center'}}, h(M.Wordmark,null), h(M.Wordmark,{size:'lg'}), h('span',{style:{background:'var(--marino)',padding:'10px 14px'}},h(M.Wordmark,{size:'lg',onDark:true}))); }));
+</script>
+</body>
+</html>

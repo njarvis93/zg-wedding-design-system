@@ -1,0 +1,12 @@
+<!-- @dsCard group="Ornament" height=200 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Plate — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',gap:32,alignItems:'center'}}, h(M.Plate,{size:170}), h(M.Plate,{size:170,monogram:true})); }));
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- @dsCard group="Status" height=72 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Avatar — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',gap:12,alignItems:'center'}}, h(M.Avatar,{initials:'CP'}),h(M.Avatar,{initials:'AP',tone:'pendiente'}),h(M.Avatar,{initials:'TP',tone:'descartada'}),h(M.Avatar,{initials:'FR',size:40}),h(M.Avatar,{initials:'N',tone:'naranja',size:32})); }));
+</script>
+</body>
+</html>

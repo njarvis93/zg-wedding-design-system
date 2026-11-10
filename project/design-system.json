@@ -1,0 +1,282 @@
+{
+  "v": 3,
+  "layout": "files",
+  "createdOnFiles": {
+    "v": 1,
+    "at": "2026-11-09T23:55:00Z"
+  },
+  "title": "Matrimonio",
+  "namespace": "Matrimonio",
+  "libraries": [
+    {
+      "name": "react",
+      "version": "18"
+    },
+    {
+      "name": "react-dom",
+      "version": "18"
+    }
+  ],
+  "sections": {},
+  "groups": [
+    "Logos",
+    "Patterns",
+    "Illustrations",
+    "Icons"
+  ],
+  "assetGroups": {
+    "Logos": {
+      "name": "Logos",
+      "tile": "l",
+      "order": [
+        "monogram-plate.svg",
+        "plate-lemons.svg"
+      ],
+      "files": {
+        "monogram-plate.svg": {
+          "name": "monogram-plate.svg",
+          "blob": "cb67db27614234e157a04cc9e9cbb7eb",
+          "size": 4167,
+          "type": "image/svg+xml"
+        },
+        "plate-lemons.svg": {
+          "name": "plate-lemons.svg",
+          "blob": "98e8b6bfc5e89d15d3cb8d9b77a0c1b8",
+          "size": 3097,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Patterns": {
+      "name": "Patterns",
+      "tile": "m",
+      "order": [
+        "majolica-tile.svg",
+        "majolica-strip.svg",
+        "photo-placeholder.svg"
+      ],
+      "files": {
+        "majolica-tile.svg": {
+          "name": "majolica-tile.svg",
+          "blob": "cc239b62af3857fa241f93dd8de89525",
+          "size": 1722,
+          "type": "image/svg+xml"
+        },
+        "majolica-strip.svg": {
+          "name": "majolica-strip.svg",
+          "blob": "10f8edf8f9aeb48243c3dfeca52d278c",
+          "size": 1905,
+          "type": "image/svg+xml"
+        },
+        "photo-placeholder.svg": {
+          "name": "photo-placeholder.svg",
+          "blob": "05b7ad80ba5349dad579d8055c07d1c2",
+          "size": 1907,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Illustrations": {
+      "name": "Illustrations",
+      "tile": "l",
+      "order": [
+        "sand-banner.svg",
+        "cover-hero.svg",
+        "lemon-tree.svg"
+      ],
+      "files": {
+        "sand-banner.svg": {
+          "name": "sand-banner.svg",
+          "blob": "6357a26a66ddd43ab73fea88ecfa9b79",
+          "size": 128707,
+          "type": "image/svg+xml"
+        },
+        "cover-hero.svg": {
+          "name": "cover-hero.svg",
+          "blob": "b086242ce650216138dd5158ebeb053e",
+          "size": 35548,
+          "type": "image/svg+xml"
+        },
+        "lemon-tree.svg": {
+          "name": "lemon-tree.svg",
+          "blob": "7953ef373a50ad1553220c4f6d1c9d11",
+          "size": 1124,
+          "type": "image/svg+xml"
+        }
+      }
+    },
+    "Icons": {
+      "name": "Icons",
+      "tile": "xs",
+      "order": [
+        "home.svg",
+        "info.svg",
+        "check-circle.svg",
+        "gift.svg",
+        "grid.svg",
+        "checklist.svg",
+        "users.svg",
+        "more.svg",
+        "star.svg",
+        "star-filled.svg",
+        "star-empty.svg",
+        "bell.svg",
+        "search.svg",
+        "camera.svg",
+        "help-circle.svg",
+        "map-pin.svg",
+        "clock.svg",
+        "plane.svg",
+        "chevron-left.svg",
+        "check.svg",
+        "plus.svg",
+        "instagram.svg"
+      ],
+      "files": {
+        "home.svg": {
+          "name": "home.svg",
+          "blob": "8851f291dc04b0ce41788caf95bec63f",
+          "size": 265,
+          "type": "image/svg+xml"
+        },
+        "info.svg": {
+          "name": "info.svg",
+          "blob": "f7597926300dccbd851a09fcfbb0ec75",
+          "size": 258,
+          "type": "image/svg+xml"
+        },
+        "check-circle.svg": {
+          "name": "check-circle.svg",
+          "blob": "f993c131955f4daf949bab1786c36f2f",
+          "size": 263,
+          "type": "image/svg+xml"
+        },
+        "gift.svg": {
+          "name": "gift.svg",
+          "blob": "ea8245dc1125fb4c3c199775239d70df",
+          "size": 345,
+          "type": "image/svg+xml"
+        },
+        "grid.svg": {
+          "name": "grid.svg",
+          "blob": "f9baeace4b17d642421f3f1e849181b3",
+          "size": 408,
+          "type": "image/svg+xml"
+        },
+        "checklist.svg": {
+          "name": "checklist.svg",
+          "blob": "a42aecbbc26797f33dc13992320f3d53",
+          "size": 263,
+          "type": "image/svg+xml"
+        },
+        "users.svg": {
+          "name": "users.svg",
+          "blob": "08fdaa8a21475d3cd387a0854ebdaabe",
+          "size": 318,
+          "type": "image/svg+xml"
+        },
+        "more.svg": {
+          "name": "more.svg",
+          "blob": "cb67f7a2697da786f7ec03f30ef82c0d",
+          "size": 282,
+          "type": "image/svg+xml"
+        },
+        "star.svg": {
+          "name": "star.svg",
+          "blob": "d3517c728478d0e94e451157dc47dab2",
+          "size": 274,
+          "type": "image/svg+xml"
+        },
+        "star-filled.svg": {
+          "name": "star-filled.svg",
+          "blob": "141896943b03158520f20194b13f87ca",
+          "size": 254,
+          "type": "image/svg+xml"
+        },
+        "star-empty.svg": {
+          "name": "star-empty.svg",
+          "blob": "b70daaa8b6a69626eb2db6315e869c03",
+          "size": 251,
+          "type": "image/svg+xml"
+        },
+        "bell.svg": {
+          "name": "bell.svg",
+          "blob": "08f1ef11f0613ab7199822dbaa2eeac1",
+          "size": 278,
+          "type": "image/svg+xml"
+        },
+        "search.svg": {
+          "name": "search.svg",
+          "blob": "9e0a63e2c893a3e96ebbf1d9675cf350",
+          "size": 227,
+          "type": "image/svg+xml"
+        },
+        "camera.svg": {
+          "name": "camera.svg",
+          "blob": "5e8c188e543a1fa093168a04054fb2f0",
+          "size": 267,
+          "type": "image/svg+xml"
+        },
+        "help-circle.svg": {
+          "name": "help-circle.svg",
+          "blob": "29868a7bfd2a99060218c2c9c801dbee",
+          "size": 301,
+          "type": "image/svg+xml"
+        },
+        "map-pin.svg": {
+          "name": "map-pin.svg",
+          "blob": "99796b681d0ef4e645b832b9a4676240",
+          "size": 293,
+          "type": "image/svg+xml"
+        },
+        "clock.svg": {
+          "name": "clock.svg",
+          "blob": "be3d7b2aee17f4352ed2a7776e694905",
+          "size": 252,
+          "type": "image/svg+xml"
+        },
+        "plane.svg": {
+          "name": "plane.svg",
+          "blob": "a68a7dc42fc04ba8ec7be0ff6d6cabf9",
+          "size": 287,
+          "type": "image/svg+xml"
+        },
+        "chevron-left.svg": {
+          "name": "chevron-left.svg",
+          "blob": "0ebb0607434a5d97ea185ddf4ef290e3",
+          "size": 214,
+          "type": "image/svg+xml"
+        },
+        "check.svg": {
+          "name": "check.svg",
+          "blob": "a6d40878d380a38f9fe6489b49339ec2",
+          "size": 218,
+          "type": "image/svg+xml"
+        },
+        "plus.svg": {
+          "name": "plus.svg",
+          "blob": "7ff0c4788f3f6c24714b3337562ea0de",
+          "size": 194,
+          "type": "image/svg+xml"
+        },
+        "instagram.svg": {
+          "name": "instagram.svg",
+          "blob": "f973a0923cc007a083b24c5bf19141e3",
+          "size": 304,
+          "type": "image/svg+xml"
+        }
+      }
+    }
+  },
+  "blobs": {},
+  "docs": {
+    "readme": "project/README.md",
+    "sections": []
+  },
+  "lastChange": {
+    "by": "Claude",
+    "at": "2026-11-10T00:50:00Z",
+    "via": "Claude Code",
+    "note": "rojo-texto light nudged #c73232 → #c22e2e: all red text now passes 4.5:1, including on arena (4.72:1)."
+  }
+}

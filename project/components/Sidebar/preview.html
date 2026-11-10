@@ -1,0 +1,12 @@
+<!-- @dsCard group="Navigation" height=640 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Sidebar — preview</title></head>
+<body style="padding:0">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{height:620,display:'flex'}}, h(M.Sidebar,{current:'panel',people:['N','J'],footer:'Narvis y Juan',items:[{value:'panel',label:'Panel'},{value:'def',label:'Definiciones',count:3},{value:'tareas',label:'Tareas'},{value:'pres',label:'Presupuesto'},{value:'prov',label:'Proveedores'},{value:'inv',label:'Invitados'},{value:'mesas',label:'Mesas'},{value:'crono',label:'Cronograma del día'},{value:'web',label:'Web de invitados'}]})); }));
+</script>
+</body>
+</html>

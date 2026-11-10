@@ -1,0 +1,16 @@
+<!-- @dsCard group="Content" height=250 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ListRow — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h(M.Card,{padding:'6px 22px',className:'',as:'div'},
+  h(M.ListRow,{number:4,title:'¿Dónde hacemos la fiesta?',meta:'Lugar · 2 preseleccionadas',trailing:'12 días',urgent:true}),
+  h(M.ListRow,{number:6,leadTone:'pendiente',title:'Paleta de colores',meta:'Moodboard · sin votar',trailing:'1 mes'}),
+  h(M.ListRow,{initials:'FR',title:'Familia Rojas',meta:'4 personas · respondió hace 2 días',badge:'4 asisten'}),
+  h(M.ListRow,{title:'Reserva de la casa',meta:'Cuota 1 de 2 · 1 dic',trailing:'$800.000',strong:true,divider:false})); }));
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<!-- @dsCard group="Foundations" height=96 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Icon — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',gap:18,flexWrap:'wrap',color:'var(--mayolica)'}},
+  ['home','info','check-circle','gift','grid','checklist','users','more','star','bell','search','camera','help-circle','map-pin','clock','plane','chevron-left','check','plus','instagram'].map(function(n){return h('span',{key:n,title:n},h(M.Icon,{name:n}));})); }));
+</script>
+</body>
+</html>

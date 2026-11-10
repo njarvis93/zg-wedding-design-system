@@ -1,0 +1,15 @@
+<!-- @dsCard group="Content" height=420 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ComparisonTable — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h(M.ComparisonTable,{columns:[{title:'Casa con viñedo',meta:'Pirque · Airbnb',status:'Preseleccionada'},{title:'Parcela con piscina',meta:'Calera de Tango · web propia',status:'Preseleccionada'},{title:'Casona de campo',meta:'Colina · Instagram',status:'Explorando',statusTone:'outline'}],
+  rows:[{label:'Precio estimado',strong:true,cells:['$2.400.000','$1.900.000','$2.800.000']},{label:'Capacidad',cells:['80 personas','70 personas','120 personas']},
+    {label:'Vista al poniente',cells:[h('span',null,h('b',{style:{color:'var(--mayolica)'}},'✓ Sí'),', sobre el viñedo'),h('span',null,h('b',{style:{color:'var(--mayolica)'}},'✓ Sí'),', despejada'),h('span',null,h('b',{style:{color:'var(--rojo-texto)'}},'✗ No'),', cerros al oeste')]},
+    {label:'Decidir',cells:[h(M.Button,{size:'md'},'Elegir esta'),h(M.Button,{size:'md'},'Elegir esta'),h(M.Button,{size:'md',variant:'quiet'},'Descartar')]}]}); }));
+</script>
+</body>
+</html>

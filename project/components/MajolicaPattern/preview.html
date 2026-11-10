@@ -1,0 +1,14 @@
+<!-- @dsCard group="Ornament" height=170 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>MajolicaPattern — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'grid',gridTemplateColumns:'1fr 1fr',gap:16}},
+  h('div',{style:{position:'relative',zIndex:0,overflow:'hidden',height:140}}, h(M.MajolicaPattern,{tone:'color'})),
+  h('div',{style:{position:'relative',zIndex:0,overflow:'hidden',height:140,background:'var(--marino)'}}, h(M.MajolicaPattern,{tone:'ghost'}))); }));
+</script>
+</body>
+</html>

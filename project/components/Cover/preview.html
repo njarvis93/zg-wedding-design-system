@@ -1,0 +1,50 @@
+<!-- @dsCard height=288 -->
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Matrimonio — cover</title>
+<style>
+  html, body { margin: 0; background: var(--fondo); }
+  .cv { position: relative; width: 960px; height: 288px; overflow: hidden; background: var(--fondo); }
+  .cv svg { position: absolute; left: 0; top: 0; }
+  .lav { fill: var(--lavanda); }
+  .may { fill: var(--mayolica); }
+  .nar { fill: var(--naranja); }
+  .roj { fill: var(--rojo); }
+  .gnd { fill: var(--fondo); }
+  .arch { rx: var(--radius-arch); }
+  .foot { rx: var(--radius-arch-foot); }
+  .cv-text { position: absolute; left: 48px; bottom: 40px; width: 420px; display: flex; flex-direction: column; gap: 14px; }
+  .cv-name { margin: 0; font-family: var(--font-display); font-weight: 700; font-size: 72px; line-height: .95; letter-spacing: -0.02em; color: var(--marino); }
+  .cv-tag { margin: 0; font: 400 14px/1.5 var(--font-sans); color: var(--texto-tenue); }
+</style>
+</head>
+<body>
+<div class="cv">
+  <svg width="960" height="288" viewBox="0 0 960 288" aria-hidden="true">
+    <!-- blocks: lavanda 88×128, mayolica 160×240, naranja 88×168, rojo 104×104 (bleeds right) — the board's arch swatches, top corners radius-arch, feet radius-arch-foot
+         arrangement: a row of unequal arches standing on one floor (y=264, space-24 above the edge), space-16 apart, right of x=480
+         pattern: literal motif → the majolica petal rosette (tile petals ×1.6) cut out of the mayolica arch in fondo with naranja centres; the brand's own tile, so it is this system and no other
+         scales: gaps space-16, floor inset space-24, arch radius-arch 36 / radius-arch-foot 8, rosette pitch 56 -->
+    <rect class="lav arch" x="496" y="136" width="88" height="128"/><rect class="lav foot" x="496" y="172" width="88" height="92"/>
+    <rect class="may arch" x="600" y="24" width="160" height="240"/><rect class="may foot" x="600" y="60" width="160" height="204"/>
+    <rect class="nar arch" x="776" y="96" width="88" height="168"/><rect class="nar foot" x="776" y="132" width="88" height="132"/>
+    <rect class="roj arch" x="880" y="160" width="104" height="104"/><rect class="roj foot" x="880" y="196" width="104" height="68"/>
+    <g transform="translate(648 64) scale(1.6)">
+      <path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(90 20 20)"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(180 20 20)"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(270 20 20)"/><circle class="nar" cx="20" cy="20" r="3.2"/>
+    </g>
+    <g transform="translate(648 120) scale(1.6)">
+      <path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(90 20 20)"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(180 20 20)"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(270 20 20)"/><circle class="nar" cx="20" cy="20" r="3.2"/>
+    </g>
+    <g transform="translate(648 176) scale(1.6)">
+      <path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(90 20 20)"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(180 20 20)"/><path class="gnd" d="M20 5c4.5 5 4.5 9.5 0 15c-4.5-5.5-4.5-10 0-15z" transform="rotate(270 20 20)"/><circle class="nar" cx="20" cy="20" r="3.2"/>
+    </g>
+  </svg>
+  <div class="cv-text">
+    <p class="cv-name">Matrimonio</p>
+    <p class="cv-tag">Editorial, costa amalfitana: mayólica, limones y terracota sobre un fondo cálido.</p>
+  </div>
+</div>
+</body>
+</html>

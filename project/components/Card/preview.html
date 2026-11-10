@@ -1,0 +1,15 @@
+<!-- @dsCard group="Content" height=300 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>Card — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'grid',gridTemplateColumns:'repeat(3,minmax(0,1fr))',gap:16}},
+  h(M.Card,null,h('strong',{style:{font:'700 17px var(--font-sans)'}},'Tu invitación'),h('p',{style:{margin:0,font:'400 15px/1.55 var(--font-sans)',color:'var(--texto-suave)'}},'3 personas invitadas a la ceremonia, la fiesta y el brunch.'),h(M.Badge,{tone:'pendiente'},'Pendiente')),
+  h(M.Card,{tone:'marino',pattern:true},h('strong',{style:{font:'700 18px var(--font-sans)'}},'Regalos'),h('p',{style:{margin:0,font:'400 15px/1.6 var(--font-sans)',color:'var(--texto-claro)'}},'Un fondo para la luna de miel y algunas cosas para la casa.'),h(M.ProgressBar,{value:45,onDark:true,label:'Regalos'})),
+  h(M.Card,{tone:'lavanda',padding:18},h('span',{className:'mx-display',style:{fontSize:20}},'11:00'),h('strong',{style:{font:'700 16px var(--font-sans)'}},'Brunch en la piscina'),h('span',{style:{font:'400 14px/1.5 var(--font-sans)',color:'var(--texto-lavanda)'}},'Relajado, hasta las 15:00 aprox.'))); }));
+</script>
+</body>
+</html>

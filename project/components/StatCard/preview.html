@@ -1,0 +1,16 @@
+<!-- @dsCard group="Content" height=190 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>StatCard — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'grid',gridTemplateColumns:'repeat(4,minmax(0,1fr))',gap:16}},
+  h(M.StatCard,{tone:'mayolica',label:'Faltan',value:'[N] días',caption:'Fecha tentativa: nov. 2028'}),
+  h(M.StatCard,{label:'RSVP respondidos',value:'72%',caption:'18 de 25 hogares · 41 personas sí'}),
+  h(M.StatCard,{label:'Pagado vs presupuesto',value:'38%',progress:38,caption:'$3,8 M pagado de $10 M'}),
+  h(M.StatCard,{tone:'pendiente',label:'Por decidir',value:'3',caption:'La más próxima vence en 12 días'})); }));
+</script>
+</body>
+</html>

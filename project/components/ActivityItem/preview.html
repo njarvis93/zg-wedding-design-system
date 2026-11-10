@@ -1,0 +1,14 @@
+<!-- @dsCard group="Content" height=130 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ActivityItem — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',flexDirection:'column',gap:10,maxWidth:360}},
+  h(M.ActivityItem,{time:'10:42'},h('strong',null,'Familia Rojas'),' confirmó: 4 asisten'),
+  h(M.ActivityItem,{tone:'naranja',time:'ayer'},h('strong',null,'Juan'),' puntuó Casa con viñedo: 4')); }));
+</script>
+</body>
+</html>

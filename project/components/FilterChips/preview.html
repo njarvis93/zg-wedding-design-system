@@ -1,0 +1,12 @@
+<!-- @dsCard group="Forms" height=80 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>FilterChips — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h(function(){var s=React.useState('Sin responder');return h(M.FilterChips,{label:'Filtrar por estado',options:['Todos','Sin responder','Asisten','No asisten'],value:s[0],onChange:s[1]});}); }));
+</script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<!-- @dsCard group="Content" height=360 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>FundCard — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{maxWidth:360}}, h(M.FundCard,{title:'Luna de miel',sub:'Costa amalfitana',raised:'$1.350.000',goal:'$3.000.000',pct:45,defaultOpen:true,details:[['Banco','[Banco]'],['Cuenta','[Tipo y número]'],['Titular','[Nombre · RUT]'],['Asunto','Regalo · Familia Pérez']]})); }));
+</script>
+</body>
+</html>

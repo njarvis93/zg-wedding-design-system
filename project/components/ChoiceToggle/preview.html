@@ -1,0 +1,14 @@
+<!-- @dsCard group="Forms" height=100 -->
+<!doctype html>
+<html lang="es">
+<head><meta charset="utf-8"><title>ChoiceToggle — preview</title></head>
+<body style="padding:16px">
+<div id="root"></div>
+<script>
+  var M = window.Matrimonio, h = React.createElement;
+  ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h(function(){var s=React.useState('yes'),t=React.useState('no');return h('div',{style:{display:'flex',flexDirection:'column',gap:10,maxWidth:340}},
+  h('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'center'}},h('span',{style:{font:'600 14px var(--font-sans)'}},'Ceremonia y fiesta'),h(M.ChoiceToggle,{value:s[0],onChange:s[1],label:'Ceremonia y fiesta'})),
+  h('div',{style:{display:'flex',justifyContent:'space-between',alignItems:'center'}},h('span',{style:{font:'600 14px var(--font-sans)'}},'Brunch del domingo'),h(M.ChoiceToggle,{value:t[0],onChange:t[1],label:'Brunch del domingo'})));}); }));
+</script>
+</body>
+</html>
