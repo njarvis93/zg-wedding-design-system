@@ -1,0 +1,25 @@
+{
+  "name": "zg-wedding-design-system-consumer-test",
+  "private": true,
+  "type": "module",
+  "description": "Installs the design system from the repo root like the app does and checks it with strict TypeScript, React Hook Form and a server render.",
+  "scripts": {
+    "typecheck": "tsc --strict --noEmit -p tsconfig.json",
+    "render": "tsc -p tsconfig.json --outDir build && node build/render.js",
+    "test": "npm run typecheck && npm run render"
+  },
+  "dependencies": {
+    "@hookform/resolvers": "^5.2.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.0",
+    "zg-wedding-design-system": "file:../..",
+    "zod": "^3.24.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "typescript": "^5.6.0"
+  }
+}

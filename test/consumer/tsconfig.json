@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "strict": true,
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "jsx": "react-jsx",
+    "skipLibCheck": false,
+    "types": ["node"],
+    "noEmitOnError": true
+  },
+  "include": ["form.tsx", "render.tsx"]
+}

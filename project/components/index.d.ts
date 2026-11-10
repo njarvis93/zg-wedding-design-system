@@ -1,5 +1,5 @@
 // Matrimonio — types for `import { … } from 'zg-wedding-design-system'` (and window.Matrimonio in the artifact).
-import type { ReactNode, ReactElement } from 'react';
+import type { ReactNode, ReactElement, ChangeEvent, ForwardRefExoticComponent, RefAttributes, InputHTMLAttributes, SelectHTMLAttributes } from 'react';
 
 export type IconName = 'home' | 'info' | 'check-circle' | 'gift' | 'grid' | 'checklist' | 'users' | 'more' | 'star' | 'bell' | 'search' | 'camera' | 'help-circle' | 'map-pin' | 'clock' | 'plane' | 'chevron-left' | 'check' | 'plus' | 'instagram';
 export type StatusTone = 'confirmado' | 'pendiente' | 'elegida' | 'descartada';
@@ -14,9 +14,16 @@ export interface AvatarProps { initials: string; tone?: 'lavanda' | 'pendiente' 
 export interface AvatarStackProps { people: { initials: string; name?: string; tone?: AvatarProps['tone'] }[]; label?: string; size?: number; }
 export interface ProgressBarProps { value: number; label?: string; height?: number; onDark?: boolean; }
 export interface StarRatingProps { value?: number; max?: number; label?: string; onChange?: (n: number) => void; }
-export interface TextFieldProps { label?: string; placeholder?: string; hint?: string; value?: string; defaultValue?: string; onChange?: (e: any) => void; variant?: 'default' | 'code' | 'search'; type?: string; multiline?: boolean; rows?: number; }
-export interface SelectProps { label: string; options: Option[]; value?: string; defaultValue?: string; onChange?: (e: any) => void; }
-export interface CheckboxRowProps { label: ReactNode; checked?: boolean; defaultChecked?: boolean; onChange?: (e: any) => void; boxed?: boolean; divider?: boolean; tag?: string; tagTone?: StatusTone; due?: string; meta?: string; urgent?: boolean; done?: boolean; }
+/** Native attributes passed straight to the `<input>` / `<textarea>` (React Hook Form's `register()` spreads `name`, `onBlur`, `ref` and its rules). */
+type TextFieldNativeProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'name' | 'disabled' | 'required' | 'readOnly' | 'autoComplete' | 'autoFocus' | 'inputMode' | 'maxLength' | 'minLength' | 'pattern' | 'min' | 'max' | 'step' | 'id' | 'aria-describedby'>
+  & Pick<InputHTMLAttributes<HTMLInputElement | HTMLTextAreaElement>, 'onBlur' | 'onFocus'>;
+type SelectNativeProps = Pick<SelectHTMLAttributes<HTMLSelectElement>, 'name' | 'onBlur' | 'onFocus' | 'disabled' | 'required' | 'autoFocus' | 'id' | 'aria-describedby'>;
+type CheckboxNativeProps = Pick<InputHTMLAttributes<HTMLInputElement>, 'name' | 'value' | 'onBlur' | 'onFocus' | 'disabled' | 'required' | 'id' | 'aria-describedby'>;
+
+// `onChange` uses method syntax on purpose: handlers typed `(e: any)` (1.0.0) or for a narrower element still compile.
+export interface TextFieldProps extends TextFieldNativeProps { label?: string; placeholder?: string; hint?: string; /** Shown under the field in `rojo-texto` instead of the hint; sets `aria-invalid`. */ error?: string; value?: string; defaultValue?: string; onChange?(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void; variant?: 'default' | 'code' | 'search'; type?: string; multiline?: boolean; rows?: number; className?: string; }
+export interface SelectProps extends SelectNativeProps { label: string; options: Option[]; value?: string; defaultValue?: string; onChange?(e: ChangeEvent<HTMLSelectElement>): void; /** Empty, disabled first option. */ placeholder?: string; hint?: string; error?: string; className?: string; }
+export interface CheckboxRowProps extends CheckboxNativeProps { label: ReactNode; checked?: boolean; defaultChecked?: boolean; onChange?(e: ChangeEvent<HTMLInputElement>): void; error?: string; boxed?: boolean; divider?: boolean; tag?: string; tagTone?: StatusTone; due?: string; meta?: string; urgent?: boolean; done?: boolean; className?: string; }
 export interface SegmentedControlProps { options: Option[]; value: string; onChange?: (v: string) => void; label?: string; size?: 'md' | 'sm'; }
 export interface ChoiceToggleProps { value?: 'yes' | 'no'; onChange?: (v: 'yes' | 'no') => void; label?: string; labels?: [string, string]; }
 export interface FilterChipsProps { options: Option[]; value?: string; onChange?: (v: string) => void; label?: string; asLinks?: boolean; }
@@ -48,9 +55,9 @@ export declare function Avatar(props: AvatarProps): ReactElement;
 export declare function AvatarStack(props: AvatarStackProps): ReactElement;
 export declare function ProgressBar(props: ProgressBarProps): ReactElement;
 export declare function StarRating(props: StarRatingProps): ReactElement;
-export declare function TextField(props: TextFieldProps): ReactElement;
-export declare function Select(props: SelectProps): ReactElement;
-export declare function CheckboxRow(props: CheckboxRowProps): ReactElement;
+export declare const TextField: ForwardRefExoticComponent<TextFieldProps & RefAttributes<HTMLInputElement | HTMLTextAreaElement>>;
+export declare const Select: ForwardRefExoticComponent<SelectProps & RefAttributes<HTMLSelectElement>>;
+export declare const CheckboxRow: ForwardRefExoticComponent<CheckboxRowProps & RefAttributes<HTMLInputElement>>;
 export declare function SegmentedControl(props: SegmentedControlProps): ReactElement;
 export declare function ChoiceToggle(props: ChoiceToggleProps): ReactElement;
 export declare function FilterChips(props: FilterChipsProps): ReactElement;

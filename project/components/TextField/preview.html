@@ -1,4 +1,4 @@
-<!-- @dsCard group="Forms" height=330 -->
+<!-- @dsCard group="Forms" height=700 -->
 <!doctype html>
 <html lang="es">
 <head><meta charset="utf-8"><title>TextField — preview</title></head>
@@ -9,7 +9,10 @@
   ReactDOM.createRoot(document.getElementById('root')).render(h(function () { return h('div',{style:{display:'flex',flexDirection:'column',gap:16,maxWidth:360}},
   h(M.TextField,{label:'Código de invitación',variant:'code',placeholder:'XXXX-XXXX',defaultValue:'K7M-QX4P'}),
   h(M.TextField,{label:'Restricciones o alergias',placeholder:'Ej.: sin gluten, alergia a frutos secos',hint:'Solo Narvis y Juan pueden verlo.'}),
-  h(M.TextField,{variant:'search',placeholder:'Buscar hogar o persona'})); }));
+  h(M.TextField,{variant:'search',placeholder:'Buscar hogar o persona'}),
+  h(M.TextField,{label:'Código de invitación',variant:'code',maxLength:8,defaultValue:'K7M-QX',error:'El código tiene 8 caracteres.'}),
+  h(M.TextField,{label:'Nombre completo',required:true,placeholder:'Ej.: Ana Pérez',hint:'Como aparece en tu invitación.'}),
+  h(M.TextField,{label:'Correo electrónico',disabled:true,defaultValue:'ana@ejemplo.com'})); }));
 </script>
 </body>
 </html>
