@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Matrimonio · Design System</title>
+<meta name="description" content="Sistema visual de la app de matrimonio de Narvis y Juan: colores, tipografía, componentes y recursos.">
+<link rel="stylesheet" href="project/components/bundle.css">
+<style>
+  :root { color-scheme: light; }
+  [data-theme="dark"] { color-scheme: dark; }
+  html, body { margin: 0; background: var(--fondo, #fffdf6); color: var(--marino, #1e3a6e); }
+  body { font-family: var(--font-sans, system-ui, sans-serif); font-size: 15px; line-height: 1.55; }
+  * { box-sizing: border-box; }
+  a { color: var(--accion-texto, #2e5aa7); }
+
+  .site-strip { position: sticky; top: 0; z-index: 20; }
+  .site-head { position: sticky; top: 24px; z-index: 19; background: var(--fondo); border-bottom: 2px solid var(--trazo); }
+  .site-head__in { max-width: 1200px; margin: 0 auto; padding: 14px 24px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 24px; }
+  .site-nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  .site-nav a { min-height: 40px; display: inline-flex; align-items: center; padding: 0 12px; color: var(--marino); font-weight: 600; text-decoration: none; }
+  .site-nav a:hover { background: var(--lavanda); }
+  .site-nav a:focus-visible { outline: 2px solid var(--marino); outline-offset: 2px; }
+
+  main { max-width: 1200px; margin: 0 auto; padding: 32px 24px 72px; display: flex; flex-direction: column; gap: 64px; }
+  section > h2 { margin: 0 0 6px; font-family: var(--font-display); font-weight: 700; font-size: 34px; line-height: 1.1; letter-spacing: -0.02em; text-transform: uppercase; }
+  .lede { margin: 0 0 24px; color: var(--texto-suave); max-width: 720px; }
+  .eyebrow { margin: 32px 0 12px; font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--texto-tenue); }
+
+  .cover-wrap { border: 2px solid var(--trazo); overflow: hidden; }
+  .cover-scale { width: 960px; height: 288px; transform-origin: 0 0; }
+
+  /* Manual (rendered Markdown) */
+  .md { max-width: 820px; }
+  .md h2 { font-family: var(--font-display); font-weight: 700; font-size: 22px; letter-spacing: -0.02em; text-transform: uppercase; margin: 36px 0 10px; }
+  .md h3 { font-size: 17px; margin: 28px 0 8px; }
+  .md p, .md li { color: var(--texto-suave); }
+  .md strong { color: var(--marino); }
+  .md code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .88em; background: var(--blanco); border: 1px solid var(--lavanda); padding: 1px 5px; color: var(--marino); }
+  .md ul { padding-left: 20px; }
+  .md li { margin: 4px 0; }
+
+  /* Colors */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 12px; }
+  .swatch { background: var(--blanco); border: 2px solid var(--trazo); display: flex; flex-direction: column; }
+  .swatch__chip { height: 72px; border-bottom: 2px solid var(--trazo); }
+  .swatch__body { padding: 12px 14px; display: flex; flex-direction: column; gap: 4px; }
+  .swatch__name { font-weight: 700; }
+  .swatch__val { font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--texto-tenue); }
+  .swatch__use { font-size: 13px; line-height: 1.45; color: var(--texto-suave); display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; }
+
+  /* Type */
+  .type-row { display: grid; grid-template-columns: 180px minmax(0, 1fr); gap: 8px 24px; padding: 16px 0; border-bottom: 1px solid var(--lavanda); align-items: baseline; }
+  .type-row__meta { font-size: 13px; color: var(--texto-tenue); }
+  .type-row__meta strong { display: block; color: var(--marino); font-size: 14px; }
+  .type-row__sample { overflow-wrap: anywhere; }
+
+  /* Scales */
+  .scale { display: flex; flex-direction: column; gap: 8px; }
+  .scale__row { display: grid; grid-template-columns: 160px 70px minmax(0, 1fr); gap: 12px; align-items: center; font-size: 13px; }
+  .scale__bar { height: 14px; background: var(--accion-texto); }
+  .scale__val { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--texto-tenue); }
+
+  /* Components */
+  .comp { border: 2px solid var(--trazo); background: var(--blanco); margin-bottom: 20px; }
+  .comp__head { padding: 16px 20px; border-bottom: 1px solid var(--lavanda); display: flex; flex-direction: column; gap: 4px; }
+  .comp__head h3 { margin: 0; font-size: 18px; }
+  .comp__head p { margin: 0; color: var(--texto-suave); font-size: 14px; }
+  .comp__stage { padding: 24px 20px; background: var(--fondo); overflow-x: auto; }
+  .comp details { border-top: 1px solid var(--lavanda); }
+  .comp summary { cursor: pointer; padding: 12px 20px; font-weight: 600; color: var(--accion-texto); }
+  .comp details .md { padding: 0 20px 16px; }
+  .comp details .md h2 { font-size: 16px; margin: 18px 0 6px; }
+
+  /* Assets */
+  .assets { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+  .assets--xs { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+  .asset { background: var(--blanco); border: 2px solid var(--trazo); display: flex; flex-direction: column; }
+  .asset__img { height: 140px; display: flex; align-items: center; justify-content: center; padding: 12px; background: var(--crema); }
+  .assets--xs .asset__img { height: 72px; }
+  .asset__img img { max-width: 100%; max-height: 100%; }
+  .asset__name { padding: 8px 10px; font: 12px ui-monospace, SFMono-Regular, Menlo, monospace; color: var(--texto-tenue); overflow-wrap: anywhere; }
+
+  .site-foot { border-top: 2px solid var(--trazo); }
+  .site-foot__in { max-width: 1200px; margin: 0 auto; padding: 24px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; font-size: 13px; color: var(--texto-tenue); }
+  .error { padding: 16px; border: 2px solid var(--rojo); color: var(--marino); }
+
+  @media (max-width: 640px) {
+    .site-head { position: static; }
+    .site-head__in, main, .site-foot__in { padding-left: 16px; padding-right: 16px; }
+    section > h2 { font-size: 28px; }
+    .comp__stage { padding: 20px 8px; }
+    .comp__head, .comp summary, .comp details .md { padding-left: 14px; padding-right: 14px; }
+    .type-row { grid-template-columns: 1fr; }
+    .scale__row { grid-template-columns: 120px 56px minmax(0, 1fr); }
+  }
+</style>
+</head>
+<body>
+<div class="site-strip" id="strip"></div>
+<header class="site-head">
+  <div class="site-head__in">
+    <div id="brand"></div>
+    <nav class="site-nav" aria-label="Secciones">
+      <a href="#manual">Manual</a><a href="#colores">Colores</a><a href="#tipografia">Tipografía</a><a href="#medidas">Medidas</a><a href="#componentes">Componentes</a><a href="#recursos">Recursos</a>
+    </nav>
+    <div id="theme"></div>
+  </div>
+</header>
+
+<main>
+  <section aria-label="Portada"><div class="cover-wrap" id="cover"></div></section>
+  <section id="manual"><h2>Manual de marca</h2><div class="md" id="manual-body">Cargando…</div></section>
+  <section id="colores"><h2>Colores</h2><p class="lede">Cada token con su valor en el tema activo y dónde se usa. Cambia entre Costa y Noche arriba a la derecha.</p><div class="swatches" id="swatches"></div></section>
+  <section id="tipografia"><h2>Tipografía</h2><p class="lede">Space Grotesk para titulares en mayúsculas; DM Sans para todo lo que se lee.</p><div id="type"></div></section>
+  <section id="medidas"><h2>Medidas</h2><p class="lede">Espaciado, radios, sombra y tamaños de control, tal como los usan las pantallas.</p><div id="scales"></div></section>
+  <section id="componentes"><h2>Componentes</h2><p class="lede">Los componentes de <code>project/components/bundle.js</code> (<code>window.Matrimonio</code>), funcionando. Cada uno trae su guía de uso.</p><div id="components"></div></section>
+  <section id="recursos"><h2>Recursos</h2><p class="lede">Logos, patrones, ilustraciones e íconos en SVG, en <code>project/assets/</code>.</p><div id="assets"></div></section>
+</main>
+
+<footer class="site-foot"><div class="site-foot__in">
+  <span>Matrimonio · Design System — Narvis <span style="color:var(--rojo)">&amp;</span> Juan</span>
+  <a href="https://github.com/njarvis93/zg-wedding-design-system">Código en GitHub</a>
+</div></footer>
+
+<script src="https://cdn.jsdelivr.net/npm/react@18.3.1/umd/react.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/react-dom@18.3.1/umd/react-dom.production.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+<script src="project/components/bundle.js"></script>
+<script>
+(function () {
+  'use strict';
+  var BASE = 'project/';
+  var h = React.createElement, M = window.Matrimonio;
+
+  function get(path, as) {
+    return fetch(BASE + path).then(function (r) {
+      if (!r.ok) throw new Error(path + ' → ' + r.status);
+      return as === 'json' ? r.json() : r.text();
+    });
+  }
+  function esc(s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); }
+  function md(text) { return window.marked ? marked.parse(text) : '<pre>' + esc(text) + '</pre>'; }
+  function fail(el, e) { el.innerHTML = '<p class="error">No se pudo cargar: ' + esc(e.message) + '</p>'; }
+
+  /* ---------- Theme ---------- */
+  var stored = null;
+  try { stored = localStorage.getItem('mx-theme'); } catch (e) {}
+  var theme = stored || (window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+  var listeners = [];
+  function setTheme(t) {
+    theme = t; document.documentElement.setAttribute('data-theme', t);
+    try { localStorage.setItem('mx-theme', t); } catch (e) {}
+    listeners.forEach(function (f) { f(); });
+  }
+  document.documentElement.setAttribute('data-theme', theme);
+  function ThemeSwitch() {
+    var s = React.useState(theme);
+    React.useEffect(function () { listeners.push(function () { s[1](theme); }); }, []);
+    return h(M.SegmentedControl, { size: 'sm', label: 'Tema', options: [{ value: 'light', label: 'Costa' }, { value: 'dark', label: 'Noche' }], value: s[0], onChange: setTheme });
+  }
+  ReactDOM.createRoot(document.getElementById('theme')).render(h(ThemeSwitch));
+  ReactDOM.createRoot(document.getElementById('brand')).render(h(M.Wordmark, { size: 'lg' }));
+  ReactDOM.createRoot(document.getElementById('strip')).render(h(M.MajolicaStrip, { size: 'desktop' }));
+
+  /* ---------- Tokens → CSS custom properties (same layout as the artifact's tokens.css) ---------- */
+  function val(v) { return /^\{.+\}$/.test(v) ? 'var(--' + v.slice(1, -1) + ')' : v; }
+  function buildCss(t) {
+    var themes = t.color.themes.map(function (x) { return x.id; });
+    var first = themes[0], out = [];
+    out.push(':root, [data-theme="' + first + '"] {');
+    t.color.tokens.forEach(function (x) { out.push('--' + x.name + ':' + val(typeof x.value === 'string' ? x.value : x.value[first]) + ';'); });
+    (t.shadow ? t.shadow.tokens : []).forEach(function (x) { out.push('--' + x.name + ':' + x.value + ';'); });
+    out.push('}');
+    themes.slice(1).forEach(function (id) {
+      out.push('[data-theme="' + id + '"] {');
+      t.color.tokens.forEach(function (x) { if (typeof x.value === 'object' && x.value[id]) out.push('--' + x.name + ':' + val(x.value[id]) + ';'); });
+      out.push('}');
+    });
+    out.push(':root {');
+    Object.keys(t).forEach(function (k) {
+      if (k === 'color' || k === 'shadow' || k === 'type' || !t[k] || !t[k].tokens) return;
+      t[k].tokens.forEach(function (x) { out.push('--' + x.name + ':' + (typeof x.value === 'number' ? x.value + 'px' : x.value) + ';'); });
+    });
+    Object.keys(t.type.families).forEach(function (k) { out.push('--font-' + k + ':' + t.type.families[k] + ';'); });
+    out.push('}');
+    t.type.fonts.forEach(function (f) {
+      var file = f.file.indexOf('/') < 0 ? 'fonts/' + f.file : f.file;
+      out.push("@font-face{font-family:'" + f.family + "';src:url('" + BASE + file + "') format('woff2');font-weight:" + f.weight + ';font-style:' + (f.style || 'normal') + ';font-display:swap;}');
+    });
+    return out.join('\n');
+  }
+
+  function renderColors(t) {
+    var el = document.getElementById('swatches');
+    function draw() {
+      el.innerHTML = t.color.tokens.map(function (x) {
+        var v = typeof x.value === 'string' ? x.value : (x.value[theme] || x.value[t.color.themes[0].id]);
+        return '<div class="swatch"><div class="swatch__chip" style="background:var(--' + esc(x.name) + ')"></div><div class="swatch__body">' +
+          '<span class="swatch__name">' + esc(x.name) + '</span><span class="swatch__val">' + esc(v) + '</span>' +
+          '<span class="swatch__use" title="' + esc(x.usage || '') + '">' + esc(x.usage || '') + '</span></div></div>';
+      }).join('');
+    }
+    draw(); listeners.push(draw);
+  }
+
+  function renderType(t) {
+    var el = document.getElementById('type'), html = '';
+    t.type.groups.forEach(function (g) {
+      html += '<p class="eyebrow">' + esc(g.name) + '</p>';
+      g.styles.forEach(function (s) {
+        var fam = 'var(--font-' + (s.family || g.family) + ')';
+        var upper = g.family === 'display' || /eyebrow|kicker/.test(s.name);
+        var lh = typeof s.lineHeight === 'number' ? s.lineHeight : (s.lineHeight || 'normal');
+        var style = 'margin:0;font-family:' + fam + ';font-size:' + s.fontSize + ';line-height:' + lh + ';font-weight:' + s.fontWeight + ';letter-spacing:' + (s.letterSpacing || 'normal') + (upper ? ';text-transform:uppercase' : '');
+        html += '<div class="type-row"><div class="type-row__meta"><strong>' + esc(s.name) + '</strong>' + esc(s.fontSize) + ' / ' + esc(lh) + ' · ' + esc(s.fontWeight) + '</div>' +
+          '<p class="type-row__sample" style="' + style + '">' + esc(s.sample || 'Nos casamos al atardecer') + '</p></div>';
+      });
+    });
+    el.innerHTML = html;
+  }
+
+  function renderScales(t) {
+    var el = document.getElementById('scales'), html = '';
+    function block(title, fam, bar) {
+      if (!t[fam]) return;
+      html += '<p class="eyebrow">' + title + '</p><div class="scale">';
+      t[fam].tokens.forEach(function (x) {
+        var px = parseFloat(x.value);
+        var vis = bar && !isNaN(px) && /px$|^0$/.test(String(x.value)) ? '<div class="scale__bar" style="width:' + Math.min(px, 1200) / 12 + '%;min-width:' + (px ? 2 : 0) + 'px"></div>' : '<span style="font-size:13px;color:var(--texto-suave)">' + esc(x.usage || '') + '</span>';
+        html += '<div class="scale__row"><strong>' + esc(x.name) + '</strong><span class="scale__val">' + esc(x.value) + '</span>' + vis + '</div>';
+      });
+      html += '</div>';
+    }
+    block('Espaciado', 'spacing', true);
+    block('Radios', 'radius', false);
+    block('Sombra', 'shadow', false);
+    block('Tamaños', 'size', false);
+    block('Bordes', 'borderWidth', false);
+    el.innerHTML = html;
+  }
+
+  /* ---------- Previews: each preview.html's script runs in this page against window.Matrimonio ---------- */
+  var n = 0;
+  function mountPreview(html, host) {
+    var body = (/<body[^>]*>([\s\S]*)<\/body>/i.exec(html) || [, html])[1];
+    var style = /<style>([\s\S]*?)<\/style>/i.exec(html);
+    var id = 'pv-' + (++n);
+    var markup = body.replace(/<script>[\s\S]*?<\/script>/gi, '').replace(/id="root"/, 'id="' + id + '"');
+    host.innerHTML = (style ? '<style>' + style[1] + '</style>' : '') + markup;
+    var scripts = body.match(/<script>([\s\S]*?)<\/script>/gi) || [];
+    scripts.forEach(function (s) {
+      var code = s.replace(/^<script>|<\/script>$/gi, '').replace(/getElementById\('root'\)/g, "getElementById('" + id + "')");
+      try { new Function(code)(); } catch (e) { host.insertAdjacentHTML('beforeend', '<p class="error">' + esc(e.message) + '</p>'); }
+    });
+  }
+
+  function renderCover() {
+    var wrap = document.getElementById('cover');
+    get('components/Cover/preview.html').then(function (html) {
+      wrap.innerHTML = '<div class="cover-scale"></div>';
+      var inner = wrap.firstChild;
+      mountPreview(html, inner);
+      function fit() { var s = Math.min(1, wrap.clientWidth / 960); inner.style.transform = 'scale(' + s + ')'; wrap.style.height = Math.round(288 * s) + 4 + 'px'; }
+      fit(); window.addEventListener('resize', fit);
+    }).catch(function (e) { fail(wrap, e); });
+  }
+
+  function renderComponents(bundleText) {
+    var el = document.getElementById('components');
+    var m = /@ds-bundle:\s*(\{.*?\})\s*\*\//.exec(bundleText);
+    var names = m ? JSON.parse(m[1]).components.map(function (c) { return c.name; }) : [];
+    Promise.all(names.map(function (name) {
+      return Promise.all([get('components/' + name + '/preview.html').catch(function () { return ''; }), get('components/' + name + '/README.md').catch(function () { return ''; })])
+        .then(function (r) { return { name: name, preview: r[0], readme: r[1] }; });
+    })).then(function (items) {
+      var groups = {}, order = [];
+      items.forEach(function (it) {
+        var g = (/@dsCard[^>]*group="([^"]+)"/.exec(it.preview) || [, 'Otros'])[1];
+        if (!groups[g]) { groups[g] = []; order.push(g); }
+        groups[g].push(it);
+      });
+      el.innerHTML = '';
+      order.forEach(function (g) {
+        el.insertAdjacentHTML('beforeend', '<p class="eyebrow">' + esc(g) + '</p>');
+        groups[g].forEach(function (it) {
+          var first = it.readme.split(/\n\s*\n/)[0] || '';
+          var rest = it.readme.slice(first.length);
+          var card = document.createElement('article');
+          card.className = 'comp'; card.id = 'c-' + it.name;
+          card.innerHTML = '<div class="comp__head"><h3>' + esc(it.name) + '</h3><div>' + md(first) + '</div></div><div class="comp__stage"></div>' +
+            (rest.trim() ? '<details><summary>Guía de uso</summary><div class="md">' + md(rest) + '</div></details>' : '');
+          el.appendChild(card);
+          if (it.preview) mountPreview(it.preview, card.querySelector('.comp__stage'));
+        });
+      });
+    }).catch(function (e) { fail(el, e); });
+  }
+
+  function renderAssets(index) {
+    var el = document.getElementById('assets'), html = '';
+    (index.groups || Object.keys(index.assetGroups || {})).forEach(function (g) {
+      var grp = index.assetGroups[g]; if (!grp) return;
+      html += '<p class="eyebrow">' + esc(g) + '</p><div class="assets' + (grp.tile === 'xs' ? ' assets--xs' : '') + '">';
+      (grp.order || Object.keys(grp.files || {})).forEach(function (name) {
+        var src = BASE + 'assets/' + encodeURIComponent(g) + '/' + name.split('/').map(encodeURIComponent).join('/');
+        html += '<a class="asset" href="' + src + '" style="text-decoration:none"><span class="asset__img"><img src="' + src + '" alt="' + esc(name) + '" loading="lazy"></span><span class="asset__name">' + esc(name) + '</span></a>';
+      });
+      html += '</div>';
+    });
+    el.innerHTML = html;
+  }
+
+  get('tokens.json', 'json').then(function (t) {
+    var st = document.createElement('style'); st.textContent = buildCss(t);
+    document.head.insertBefore(st, document.head.querySelector('link[rel=stylesheet]'));
+    renderColors(t); renderType(t); renderScales(t); renderCover();
+  }).catch(function (e) { fail(document.getElementById('swatches'), e); });
+  get('README.md').then(function (text) { document.getElementById('manual-body').innerHTML = md(text); }).catch(function (e) { fail(document.getElementById('manual-body'), e); });
+  get('components/bundle.js').then(renderComponents).catch(function (e) { fail(document.getElementById('components'), e); });
+  get('design-system.json', 'json').then(renderAssets).catch(function (e) { fail(document.getElementById('assets'), e); });
+})();
+</script>
+</body>
+</html>

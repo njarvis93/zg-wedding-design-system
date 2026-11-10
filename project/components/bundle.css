@@ -163,7 +163,7 @@ textarea.mx-input { height: auto; padding: var(--space-12) var(--space-14); font
 .mx-timeline { background: var(--blanco); border: var(--border-card) solid var(--trazo); padding: var(--space-6) var(--space-20); }
 .mx-timeline__row { display: flex; gap: var(--space-16); padding: var(--space-16) 0; border-bottom: var(--border-hairline) solid var(--lavanda); }
 .mx-timeline__row:last-child { border-bottom: 0; }
-.mx-timeline__time { width: 56px; flex-shrink: 0; font-size: 20px; }
+.mx-timeline__time { min-width: 56px; flex-shrink: 0; white-space: nowrap; font-size: 20px; }
 .mx-timeline__time.is-hl { color: var(--rojo-texto); }
 .mx-timeline__body { display: flex; flex-direction: column; gap: var(--space-4); }
 .mx-timeline__body strong { font: 700 16px/1.4 var(--font-sans); }

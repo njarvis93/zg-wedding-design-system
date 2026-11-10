@@ -2,6 +2,8 @@
 
 Visual system for the ZG Wedding app: a public cover, a mobile-first guest site and the couple's planning tool. Direction: editorial, Amalfi coast — majolica tiles, lemons, a ceramic plate and terracotta on a warm off-white page. Two themes: **Costa** (light) and **Noche** (dark).
 
+**See it live:** https://njarvis93.github.io/zg-wedding-design-system/ — palette in both themes, type, every component working, and the assets. The site (`index.html`) reads the files in `project/` directly, so it updates with every push to `main`.
+
 | Path | What |
 | --- | --- |
 | [`project/README.md`](project/README.md) | The brand book: voice, color, type, layout, ornament and icon rules. Start here. |
