@@ -2,6 +2,15 @@
 
 Versions follow [semver](https://semver.org). Each version is a git tag (`vX.Y.Z`) that the front installs directly from GitHub. Removing or renaming a token, component or prop is a **major** change.
 
+## 1.2.0 — 2026-11-18
+
+Actions usable as Radix triggers and a keyboard-accessible comparison table (zg-wedding-app#2). Minor: every 1.1.0 call renders and behaves the same.
+
+- **`Button`, `IconButton`** use `React.forwardRef` (the ref reaches the `<button>`, or the `<a>` when `Button` has `href`) and pass every other prop (`aria-*`, `data-*`, `id`, `type`, `onKeyDown`…) to the element. `<Dialog.Trigger asChild><Button>` opens the dialog and Radix returns focus on close, with no extra code. `IconButton` also accepts `type`; its `label` still sets `aria-label`.
+- **`ComparisonTable`:** the sideways-scrolling container is `tabIndex={0}` `role="region"` with an accessible name (new `label` prop, default "Comparación de propuestas", or `labelledBy`) and a visible focus ring, so axe no longer reports `scrollable-region-focusable` at 360 px. New `className`.
+- **Types:** `Button` and `IconButton` are `ForwardRefExoticComponent`s that accept the native button attributes; `onClick` receives the mouse event (method syntax, so `() => void` handlers still compile).
+- **CI:** `test/consumer/` type-checks typed refs and pass-through props and server-renders a Radix `Dialog.Trigger asChild` and the table.
+
 ## 1.1.0 — 2026-11-10
 
 Form controls for React Hook Form. Minor: every 1.0.0 call renders and behaves the same.

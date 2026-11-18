@@ -1,13 +1,14 @@
 // Matrimonio — types for `import { … } from 'zg-wedding-design-system'` (and window.Matrimonio in the artifact).
-import type { ReactNode, ReactElement, ChangeEvent, ForwardRefExoticComponent, RefAttributes, InputHTMLAttributes, SelectHTMLAttributes } from 'react';
+import type { ReactNode, ReactElement, ChangeEvent, ForwardRefExoticComponent, RefAttributes, InputHTMLAttributes, SelectHTMLAttributes, ButtonHTMLAttributes, MouseEvent } from 'react';
 
 export type IconName = 'home' | 'info' | 'check-circle' | 'gift' | 'grid' | 'checklist' | 'users' | 'more' | 'star' | 'bell' | 'search' | 'camera' | 'help-circle' | 'map-pin' | 'clock' | 'plane' | 'chevron-left' | 'check' | 'plus' | 'instagram';
 export type StatusTone = 'confirmado' | 'pendiente' | 'elegida' | 'descartada';
 export type CardTone = 'outline' | 'mayolica' | 'marino' | 'lavanda' | 'pendiente';
 type Option = string | { value: string; label: ReactNode };
 
-export interface ButtonProps { variant?: 'primary' | 'secondary' | 'quiet' | 'dark' | 'dashed'; size?: 'sm' | 'md' | 'lg' | 'xl'; block?: boolean; icon?: IconName; href?: string; type?: 'button' | 'submit'; disabled?: boolean; pressed?: boolean; onClick?: () => void; className?: string; children: ReactNode; }
-export interface IconButtonProps { icon: IconName; label: string; variant?: 'outline' | 'primary'; dot?: boolean; onClick?: () => void; }
+/** Everything not listed here (`aria-*`, `data-*`, `id`, `onKeyDown`, `title`…) reaches the `<button>` (or the `<a>` when `href` is set), so `<Dialog.Trigger asChild><Button>` works. */
+export interface ButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onClick' | 'children' | 'className'> { variant?: 'primary' | 'secondary' | 'quiet' | 'dark' | 'dashed'; size?: 'sm' | 'md' | 'lg' | 'xl'; block?: boolean; icon?: IconName; href?: string; type?: 'button' | 'submit' | 'reset'; disabled?: boolean; pressed?: boolean; onClick?(e: MouseEvent<HTMLElement>): void; className?: string; children: ReactNode; }
+export interface IconButtonProps extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, 'type' | 'onClick' | 'children' | 'className' | 'aria-label'> { icon: IconName; label: string; variant?: 'outline' | 'primary'; dot?: boolean; type?: 'button' | 'submit' | 'reset'; onClick?(e: MouseEvent<HTMLButtonElement>): void; className?: string; }
 export interface IconProps { name: IconName; size?: number; strokeWidth?: number; label?: string; className?: string; }
 export interface BadgeProps { tone?: StatusTone | 'outline' | 'count'; size?: 'md' | 'sm'; children: ReactNode; }
 export interface AvatarProps { initials: string; tone?: 'lavanda' | 'pendiente' | 'descartada' | 'naranja'; size?: number; ring?: boolean; name?: string; decorative?: boolean; }
@@ -37,7 +38,7 @@ export interface StatusMessageProps { title: string; children?: ReactNode; }
 export interface ActivityItemProps { tone?: 'mayolica' | 'naranja'; time?: string; children: ReactNode; }
 export interface GiftItemProps { title: string; price: string; state?: 'free' | 'mine' | 'taken'; image?: string; imageLabel?: string; onReserve?: () => void; onRelease?: () => void; }
 export interface FundCardProps { title: string; sub?: string; icon?: IconName; raised: string; goal: string; pct: number; cta?: string; details?: [string, ReactNode][]; defaultOpen?: boolean; }
-export interface ComparisonTableProps { corner?: string; columns: { title: string; meta?: string; status?: string; statusTone?: BadgeProps['tone']; imageLabel?: string }[]; rows: { label: string; cells: ReactNode[]; strong?: boolean }[]; }
+export interface ComparisonTableProps { corner?: string; /** Accessible name of the scrollable region (default "Comparación de propuestas"). */ label?: string; /** Id of an element that names the region; wins over `label`. */ labelledBy?: string; className?: string; columns: { title: string; meta?: string; status?: string; statusTone?: BadgeProps['tone']; imageLabel?: string }[]; rows: { label: string; cells: ReactNode[]; strong?: boolean }[]; }
 export interface TabBarProps { items: { value: string; label: string; icon: IconName; href?: string }[]; current?: string; variant?: 'guests' | 'app'; label?: string; }
 export interface TopNavProps { items: { value: string; label: string; href?: string }[]; current?: string; guest?: string; label?: string; }
 export interface SidebarProps { items: { value: string; label: string; count?: number; href?: string }[]; current?: string; subtitle?: string; people?: string[]; footer?: string; label?: string; }
@@ -47,8 +48,8 @@ export interface MajolicaPatternProps { tone?: 'color' | 'ghost'; scale?: number
 export interface WordmarkProps { size?: 'md' | 'lg'; onDark?: boolean; }
 export interface PlateProps { size?: number; monogram?: boolean; label?: string; }
 
-export declare function Button(props: ButtonProps): ReactElement;
-export declare function IconButton(props: IconButtonProps): ReactElement;
+export declare const Button: ForwardRefExoticComponent<ButtonProps & (RefAttributes<HTMLButtonElement> | RefAttributes<HTMLAnchorElement>)>;
+export declare const IconButton: ForwardRefExoticComponent<IconButtonProps & RefAttributes<HTMLButtonElement>>;
 export declare function Icon(props: IconProps): ReactElement;
 export declare function Badge(props: BadgeProps): ReactElement;
 export declare function Avatar(props: AvatarProps): ReactElement;
