@@ -3,7 +3,7 @@ import { renderToString } from 'react-dom/server';
 import assert from 'node:assert/strict';
 import { RsvpForm, Legacy, rsvpSchema, type Rsvp } from './form.js';
 import type { FieldErrors } from 'react-hook-form';
-import { ActionsDemo, DialogDemo, TableDemo } from './actions.js';
+import { ActionsDemo, DialogDemo, TableDemo, SidebarDemo } from './actions.js';
 
 const clean = renderToString(<RsvpForm />);
 for (const name of ['codigo', 'nombre', 'menu', 'auto']) assert.match(clean, new RegExp(`name="${name}"`), `register() name for ${name}`);
@@ -59,5 +59,14 @@ assert.equal((table.match(/role="region"/g) ?? []).length, 3);
 assert.match(table, /aria-label="Comparación de propuestas"/);
 assert.match(table, /aria-label="Opciones de menú"/);
 assert.match(table, /aria-labelledby="h-prop"/);
+
+// Sidebar (1.3.0): the foot takes any node and shows with people or footer; 1.2.0 calls render the same.
+const side = renderToString(<SidebarDemo />);
+const foots = side.match(/<div class="mx-sidebar__foot">.*?<\/div>/g) ?? [];
+assert.equal(foots.length, 3, 'foot with people+text, people+button, and footer only; none without either');
+assert.match(foots[0], /<span class="mx-sidebar__av"[^>]*>N<\/span><span class="mx-sidebar__av is-stacked"[^>]*>J<\/span><span>Narvis y Juan<\/span>/);
+assert.match(foots[1], /<button type="button">Cerrar sesión<\/button>/);
+assert.match(foots[2], /^<div class="mx-sidebar__foot"><span><a href="\/ajustes"><svg[^>]*>.*<\/svg>Ajustes<\/a><\/span><\/div>$/);
+assert.match(side, /<path d="M10\.07 5\.27/, 'settings icon renders');
 
 console.log('consumer render OK');

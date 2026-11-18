@@ -39,6 +39,7 @@ var ICONS = {
   'chevron-left': [['path', { d: 'M15 6l-6 6 6 6' }]],
   check: [['path', { d: 'M6 12.5l4 4L18 8' }]],
   plus: [['path', { d: 'M12 5v14M5 12h14' }]],
+  settings: [['path', { d: 'M10.07 5.27L10.28 3.17h3.44l.21 2.1A7 7 0 0 1 15.39 5.88l1.64-1.34 2.43 2.43-1.34 1.64A7 7 0 0 1 18.73 10.07l2.1.21v3.44l-2.1.21A7 7 0 0 1 18.12 15.39l1.34 1.64-2.43 2.43-1.64-1.34A7 7 0 0 1 13.93 18.73l-.21 2.1h-3.44l-.21-2.1A7 7 0 0 1 8.61 18.12l-1.64 1.34-2.43-2.43 1.34-1.64A7 7 0 0 1 5.27 13.93l-2.1-.21v-3.44l2.1-.21A7 7 0 0 1 5.88 8.61L4.54 6.97l2.43-2.43 1.64 1.34A7 7 0 0 1 10.07 5.27z' }], ['circle', { cx: 12, cy: 12, r: 3 }]],
   instagram: [['rect', { x: 3, y: 3, width: 18, height: 18, rx: 5 }], ['circle', { cx: 12, cy: 12, r: 4.2 }], ['circle', { cx: 17.4, cy: 6.6, r: 1.2, fill: 'currentColor', stroke: 'none' }]]
 };
 
@@ -488,8 +489,8 @@ function Sidebar(props) {
         return h('a', { key: it.value, href: it.href || '#', className: cx('mx-sidebar__link', on && 'is-on'), 'aria-current': on ? 'page' : undefined },
           it.label, it.count ? h('span', { className: 'mx-sidebar__count' }, it.count) : null);
       })),
-    props.people ? h('div', { className: 'mx-sidebar__foot' },
-      props.people.map(function (p, i) { return h('span', { key: i, className: cx('mx-sidebar__av', i > 0 && 'is-stacked'), style: { background: v(i === 0 ? 'naranja' : 'lavanda-fija') } }, p); }),
+    props.people || props.footer != null ? h('div', { className: 'mx-sidebar__foot' },
+      (props.people || []).map(function (p, i) { return h('span', { key: i, className: cx('mx-sidebar__av', i > 0 && 'is-stacked'), style: { background: v(i === 0 ? 'naranja' : 'lavanda-fija') } }, p); }),
       h('span', null, props.footer)) : null);
 }
 
