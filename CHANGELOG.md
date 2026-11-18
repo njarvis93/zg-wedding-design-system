@@ -2,6 +2,15 @@
 
 Versions follow [semver](https://semver.org). Each version is a git tag (`vX.Y.Z`) that the front installs directly from GitHub. Removing or renaming a token, component or prop is a **major** change.
 
+## 1.3.0 — 2026-11-18
+
+Touch areas, a Sidebar foot with its own content and a settings icon (zg-wedding-app#3, issue #4). Minor: every 1.2.0 call renders and behaves the same, except for the larger touch area.
+
+- **Touch areas of 44 × 44 px** (`size-control-md`) for the controls drawn smaller: `SegmentedControl` (`md` 40px, `sm` 36px), `ChoiceToggle`, `FilterChips` and `Button` `size="sm"` (40px). A transparent `::before` centred on the control grows the hit area only on the axis that is under 44px; the visible size, the spacing and the 2px focus ring (drawn around the visible control) are unchanged. `SegmentedControl` options are at least 44px wide so adjacent hit areas never overlap, and its `md` height reads `var(--size-control-sm)` instead of a hand-written `40px`. The `FilterChips` scroll row pads itself by 2px and pulls back with a negative margin, so the hit area is not clipped and the layout does not move. The app can drop its `.mx-seg__opt` override.
+- **`Sidebar`:** `footer` accepts any `ReactNode` (a `string` works as before), and the foot shows when there are `people` **or** a `footer`. Links and buttons in the foot are plain `texto-invertido` text, 44px tall, with the `naranja` focus ring of the rest of the sidebar.
+- **Icon `settings`** (gear) in `Icon`, `IconName`, `ICONS` and `assets/Icons/settings.svg`: 24×24, round caps, `currentColor`, no fill, stroke 1.9.
+- **CI:** `test/consumer/` measures the five controls in Chromium (Playwright): visible height unchanged, hit area ≥ 44 × 44 resolved by `elementFromPoint`, no overlap between neighbours, focus ring on the visible box; and server-renders the new `Sidebar` foot.
+
 ## 1.2.0 — 2026-11-18
 
 Actions usable as Radix triggers and a keyboard-accessible comparison table (zg-wedding-app#2). Minor: every 1.1.0 call renders and behaves the same.

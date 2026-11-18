@@ -1,7 +1,7 @@
 The single line-icon family, drawn inline at 24×24 with round caps and `currentColor` strokes.
 
 ## Props
-- `name` — one of: home, info, check-circle, gift, grid, checklist, users, more, star, bell, search, camera, help-circle, map-pin, clock, plane, chevron-left, check, plus, instagram.
+- `name` — one of: home, info, check-circle, gift, grid, checklist, users, more, star, bell, search, camera, help-circle, map-pin, clock, plane, chevron-left, check, plus, instagram, settings.
 - `size` (default 24), `strokeWidth` (default 1.9), `label` (gives it `role="img"`; omit for decorative icons).
 
 ## Usage

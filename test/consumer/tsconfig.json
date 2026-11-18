@@ -9,5 +9,5 @@
     "types": ["node"],
     "noEmitOnError": true
   },
-  "include": ["form.tsx", "actions.tsx", "render.tsx"]
+  "include": ["form.tsx", "actions.tsx", "render.tsx", "touch.tsx"]
 }

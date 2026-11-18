@@ -1,7 +1,7 @@
 // Matrimonio — types for `import { … } from 'zg-wedding-design-system'` (and window.Matrimonio in the artifact).
 import type { ReactNode, ReactElement, ChangeEvent, ForwardRefExoticComponent, RefAttributes, InputHTMLAttributes, SelectHTMLAttributes, ButtonHTMLAttributes, MouseEvent } from 'react';
 
-export type IconName = 'home' | 'info' | 'check-circle' | 'gift' | 'grid' | 'checklist' | 'users' | 'more' | 'star' | 'bell' | 'search' | 'camera' | 'help-circle' | 'map-pin' | 'clock' | 'plane' | 'chevron-left' | 'check' | 'plus' | 'instagram';
+export type IconName = 'home' | 'info' | 'check-circle' | 'gift' | 'grid' | 'checklist' | 'users' | 'more' | 'star' | 'bell' | 'search' | 'camera' | 'help-circle' | 'map-pin' | 'clock' | 'plane' | 'chevron-left' | 'check' | 'plus' | 'instagram' | 'settings';
 export type StatusTone = 'confirmado' | 'pendiente' | 'elegida' | 'descartada';
 export type CardTone = 'outline' | 'mayolica' | 'marino' | 'lavanda' | 'pendiente';
 type Option = string | { value: string; label: ReactNode };
@@ -41,7 +41,7 @@ export interface FundCardProps { title: string; sub?: string; icon?: IconName; r
 export interface ComparisonTableProps { corner?: string; /** Accessible name of the scrollable region (default "Comparación de propuestas"). */ label?: string; /** Id of an element that names the region; wins over `label`. */ labelledBy?: string; className?: string; columns: { title: string; meta?: string; status?: string; statusTone?: BadgeProps['tone']; imageLabel?: string }[]; rows: { label: string; cells: ReactNode[]; strong?: boolean }[]; }
 export interface TabBarProps { items: { value: string; label: string; icon: IconName; href?: string }[]; current?: string; variant?: 'guests' | 'app'; label?: string; }
 export interface TopNavProps { items: { value: string; label: string; href?: string }[]; current?: string; guest?: string; label?: string; }
-export interface SidebarProps { items: { value: string; label: string; count?: number; href?: string }[]; current?: string; subtitle?: string; people?: string[]; footer?: string; label?: string; }
+export interface SidebarProps { items: { value: string; label: string; count?: number; href?: string }[]; current?: string; subtitle?: string; people?: string[]; footer?: ReactNode; label?: string; }
 export interface BackLinkProps { href?: string; children: ReactNode; }
 export interface MajolicaStripProps { size?: 'mobile' | 'desktop'; position?: 'top' | 'bottom'; }
 export interface MajolicaPatternProps { tone?: 'color' | 'ghost'; scale?: number; }

@@ -9,7 +9,7 @@ The square action button: a `mayolica` primary with the `rojo` offset shadow, pl
 
 ## Props
 - `variant`: `primary` | `secondary` | `quiet` | `dark` | `dashed` (default `primary`).
-- `size`: `sm` 40px · `md` 44px · `lg` 48px (default) · `xl` 52px (main mobile CTA, desktop hero).
+- `size`: `sm` 40px (hit area 44px, via a transparent `::before`) · `md` 44px · `lg` 48px (default) · `xl` 52px (main mobile CTA, desktop hero).
 - `block` — full width. `icon` — an `Icon` name shown before the label. `href` — renders an `<a>`.
 - `children` — the label, sentence case, a verb first.
 - `ref` reaches the `<button>` (or the `<a>` with `href`). Any other prop (`aria-*`, `data-*`, `id`, `type`, `onKeyDown`…) is passed to that element, so it works as a Radix trigger: `<Dialog.Trigger asChild><Button>Abrir</Button></Dialog.Trigger>` (Radix also returns focus to it on close).

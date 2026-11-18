@@ -1,7 +1,7 @@
 // Button / IconButton as Radix `asChild` triggers, plus the keyboard-reachable ComparisonTable.
 import { useRef } from 'react';
 import * as Dialog from '@radix-ui/react-dialog';
-import { Button, IconButton, ComparisonTable } from 'zg-wedding-design-system';
+import { Button, IconButton, ComparisonTable, Sidebar, Icon } from 'zg-wedding-design-system';
 
 export function DialogDemo({ defaultOpen = false }: { defaultOpen?: boolean }) {
   return (
@@ -39,6 +39,19 @@ export function TableDemo() {
       <ComparisonTable columns={[{ title: 'A' }, { title: 'B' }]} rows={[{ label: 'Precio', cells: ['1', '2'] }]} />
       <ComparisonTable label="Opciones de menú" columns={[{ title: 'A' }]} rows={[]} />
       <ComparisonTable labelledBy="h-prop" columns={[{ title: 'A' }]} rows={[]} />
+    </div>
+  );
+}
+
+// Sidebar foot: a string (1.2.0), a button, a link with the settings icon and no people, and neither.
+export function SidebarDemo() {
+  const items = [{ value: 'panel', label: 'Panel' }];
+  return (
+    <div>
+      <Sidebar items={items} people={['N', 'J']} footer="Narvis y Juan" />
+      <Sidebar items={items} people={['N', 'J']} footer={<button type="button">Cerrar sesión</button>} />
+      <Sidebar items={items} footer={<a href="/ajustes"><Icon name="settings" size={20} />Ajustes</a>} />
+      <Sidebar items={items} />
     </div>
   );
 }
