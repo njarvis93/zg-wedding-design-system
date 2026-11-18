@@ -11,7 +11,7 @@ body { margin: 0; background: var(--fondo); color: var(--marino); font-family: v
 /* Focus (intentional addition — the source draws none): solid marino ring, naranja on dark grounds */
 .mx-btn:focus-visible, .mx-iconbtn:focus-visible, .mx-seg__opt:focus-visible, .mx-choice__opt:focus-visible,
 .mx-chip:focus-visible, .mx-acc__q:focus-visible, .mx-tab:focus-visible, .mx-topnav__link:focus-visible,
-.mx-back:focus-visible, .mx-star:focus-visible, .mx-input:focus-visible, .mx-check input:focus-visible, .mx-row:focus-visible {
+.mx-back:focus-visible, .mx-star:focus-visible, .mx-compare:focus-visible, .mx-input:focus-visible, .mx-check input:focus-visible, .mx-row:focus-visible {
   outline: 2px solid var(--marino); outline-offset: 2px;
 }
 .mx-on-dark :focus-visible, .mx-sidebar__link:focus-visible { outline: 2px solid var(--naranja); outline-offset: 2px; }

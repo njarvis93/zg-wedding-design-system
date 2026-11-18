@@ -9,10 +9,10 @@ Visual system for the ZG Wedding app: a public cover, a mobile-first guest site 
 Install a tagged version straight from GitHub (the repo is public, so no token is needed):
 
 ```bash
-npm install git+https://github.com/njarvis93/zg-wedding-design-system.git#v1.1.0
+npm install git+https://github.com/njarvis93/zg-wedding-design-system.git#v1.2.0
 ```
 
-or pin a range in `package.json`: `"zg-wedding-design-system": "git+https://github.com/njarvis93/zg-wedding-design-system.git#semver:^1.1.0"`. To upgrade, change the tag.
+or pin a range in `package.json`: `"zg-wedding-design-system": "git+https://github.com/njarvis93/zg-wedding-design-system.git#semver:^1.2.0"`. To upgrade, change the tag.
 
 ```js
 // once, at the app entry
