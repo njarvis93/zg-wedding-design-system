@@ -2,6 +2,12 @@
 
 Versions follow [semver](https://semver.org). Each version is a git tag (`vX.Y.Z`) that the front installs directly from GitHub. Removing or renaming a token, component or prop is a **major** change.
 
+## 1.3.1 — 2026-11-27
+
+Patch (issue #6): no API change.
+
+- **`Countdown`:** the kicker and the date no longer run under the decorative plate at any width. A float the size of the plate's visible corner sits at the top right of the head, so only the lines beside the plate are shortened. When the card is narrower than `bp-tablet` (a container query on the card, so it also works inside narrow columns) the plate moves further out (84 × 80 px visible, still `aria-hidden`) and the date scales with the card, from 18px at 320 to 30px: "miércoles, 12 de septiembre de 2027" fits in two lines at 320, 360 and 390 px and in one at 1280, in Costa and Noche. Words never break. The preview adds a long-date example.
+
 ## 1.3.0 — 2026-11-18
 
 Touch areas, a Sidebar foot with its own content and a settings icon (zg-wedding-app#3, issue #4). Minor: every 1.2.0 call renders and behaves the same, except for the larger touch area.

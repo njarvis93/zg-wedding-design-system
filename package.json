@@ -1,6 +1,6 @@
 {
   "name": "zg-wedding-design-system",
-  "version": "1.3.0",
+  "version": "1.3.1",
   "description": "Matrimonio — design system for the ZG Wedding app: tokens (Costa and Noche themes), React components, fonts and SVG assets.",
   "private": true,
   "license": "MIT",
