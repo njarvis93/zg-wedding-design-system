@@ -168,16 +168,26 @@ textarea.mx-input { height: auto; padding: var(--space-12) var(--space-14); font
 
 /* ---------- Countdown (save the date) ---------- */
 .mx-countdown { position: relative; z-index: 0; overflow: hidden; background: var(--mayolica); color: var(--texto-invertido); border-radius: var(--radius-0);
-  padding: var(--space-24); display: flex; flex-direction: column; gap: var(--space-18); }
+  padding: var(--space-24); display: flex; flex-direction: column; gap: var(--space-18); container-type: inline-size; }
 .mx-countdown__plate { position: absolute; right: -34px; top: -40px; }
-.mx-countdown__head { position: relative; display: flex; flex-direction: column; gap: var(--space-4); }
+/* The head keeps clear of the plate (1.3.1): a float the size of the plate's visible corner (150px plate at −34/−40,
+   minus the card's 24px padding: 92 × 86) sits at the top right, so only the lines beside the plate are shortened.
+   Words never break; a long date wraps instead. Under bp-tablet the plate moves further out and the date scales with the card. */
+.mx-countdown__head { position: relative; display: flow-root; }
+.mx-countdown__head::before { content: ""; float: right; width: 92px; height: 86px; }
+.mx-countdown__kicker + .mx-countdown__date { margin-top: var(--space-4); }
 .mx-countdown__kicker { margin: 0; font: 700 12px/1.3 var(--font-sans); letter-spacing: .14em; text-transform: uppercase; color: var(--aviso-sobre-azul); }
-.mx-countdown__date { margin: 0; font-size: 30px; line-height: 1.15; }
+.mx-countdown__date { margin: 0; font-size: 30px; line-height: 1.15; overflow-wrap: normal; hyphens: manual; }
 .mx-countdown__tiles { position: relative; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--space-8); }
 .mx-countdown__tile { background: var(--velo-blanco); border-radius: var(--radius-0); padding: var(--space-12) var(--space-8); text-align: center; }
 .mx-countdown__tile p { margin: 0; }
 .mx-countdown__tile .mx-display { font-size: 26px; }
 .mx-countdown__unit { font: 400 12px/1.5 var(--font-sans); color: var(--texto-claro); }
+@container (max-width: 639.98px) {
+  .mx-countdown__plate { right: -66px; top: -70px; }
+  .mx-countdown__head::before { width: 60px; height: 56px; }
+  .mx-countdown__date { font-size: clamp(18px, 7cqi, 30px); } /* 18px at 320, ~22px at 390 (7% of the content box): a long date fits in two lines */
+}
 
 /* ---------- Timeline (programa) ---------- */
 .mx-timeline { background: var(--blanco); border: var(--border-card) solid var(--trazo); padding: var(--space-6) var(--space-20); }
